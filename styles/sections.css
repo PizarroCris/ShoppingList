@@ -71,9 +71,10 @@ ul {
   display: grid;
   gap: 12px;
   list-style: none;
+  margin-bottom: 36px;
 }
 
-#list {
+.list {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -84,16 +85,42 @@ ul {
   border-radius: 12px;
   padding-inline: 12px 16.5px;
   
+  .unchecked {
+    background-image: url(../assets/icons/state=Default.svg);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  .unchecked:hover {
+    background-image: url(../assets/icons/state=hover.svg);
+  }
+
+  .checked {
+    background-image: url(../assets/icons/state=selected.svg);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  button {
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
   img {
     width: 16px;
     height: 16px;
   }
 }
 
-#list > :first-child {
+
+
+.list > :last-child {
   display: flex;
   gap: 12px;
-  margin-right: auto;
+  margin-left: auto;
 }
 
 #footer {
@@ -101,7 +128,6 @@ ul {
   align-items: center;
   background-color: var(--color-danger);
   height: 44px;
-  margin-top: 36px;
   border-radius: 12px;
   align-items: center;
   padding-inline: 12px;
@@ -113,10 +139,20 @@ ul {
     width: 20px;
     height: 20px;
   }
+
+  button {
+    border: none;
+    background-color: var(--color-danger);
+    cursor: pointer;
+  }
 }
 
 #footer > :first-child {
   display: flex;
   gap: 8px;
   margin-right: auto;
+}
+
+.hide-alert {
+  display: none;
 }
