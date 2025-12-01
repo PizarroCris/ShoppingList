@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="styles/index.css">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 </head>
 <body>
   <header>
@@ -25,48 +27,44 @@
     </section>
 
     <section>
-      <form id="form" action="">
-        <input type="text" placeholder="Adicione um novo item">
-        <button>Adicionar Item</button>
+      <form id="form" action="/add-item" method="POST">
+        <input 
+          type="text" 
+          placeholder="Adicione um novo item" 
+          name="item" 
+          required
+          autocomplete="off"
+        >
+        <button type="submit">Adicionar Item</button>
       </form>
     </section>
 
     <section>
       <ul>
-        <li>
-          <a id="list" href="#">
-            <div>
-              <img src="assets/icons/state=Default.svg" alt="ckeckbox">
-              <span>Pão de Forma</span>
-            </div>
-            <div>
-              <img src="assets/icons/trash.svg" alt="trash">
-            </div>
-          </a>
+        <li class="list">
+          <div class="unchecked"></div>
+          <span>Pão de Forma</span>
+          <button><img src="assets/icons/trash.svg" alt="trash"></button>
         </li>
-        <li>
-          <a id="list" href="#">
-            <div>
-              <img src="assets/icons/state=Default.svg" alt="ckeckbox">
-              <span>Pão de Forma</span>
-            </div>
-            <div>
-              <img src="assets/icons/trash.svg" alt="trash">
-            </div>
-          </a>
-        </li>
+        <li class="list">
+          <div class="unchecked"></div>
+          <span>Café</span>
+          <button><img src="assets/icons/trash.svg" alt="trash">
+        </li></button>
       </ul>
     </section>
 
-    <section id="footer">
-      <div>
-        <img src="assets/icons/alert.svg" alt="alert">
-        <span>O item foi removido da lista</span>
-      </div>
-      <div>
-        <img src="assets/icons/delete-small.svg" alt="close button">
+    <section class="hide-alert">
+      <div id="footer">
+        <div>
+          <img src="assets/icons/alert.svg" alt="alert">
+          <span>O item foi removido da lista</span>
+        </div>
+        <button><img src="assets/icons/delete-small.svg" alt="close button"></button>
       </div>
     </section>
   </main>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
